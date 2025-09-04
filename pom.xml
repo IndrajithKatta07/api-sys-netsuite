@@ -44,23 +44,27 @@
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<businessGroupId>${anypoint.businessGroup}</businessGroupId>
 						<environment>${env}</environment>
-						<target>indy-space</target>
+						<target>api-dev</target>
 						<applicationName>${appname}</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 						<deploymentSettings>
-        						<http>
-            							<inbound>
-                							<publicUrl>https://deploy-cloudhub2.sirichat.com</publicUrl>
-            							</inbound>
-        						</http>
-        						<lastMileSecurity>false</lastMileSecurity>
-        						<forwardSslSession>false</forwardSslSession>
-        						<generateDefaultPublicUrl>false</generateDefaultPublicUrl>
-    						</deploymentSettings>
-						<properties>
+							<http>
+								<inbound>
+									<publicUrl>https://${appname}-fnvkev.fj29p4.usa-e2.cloudhub.io</publicUrl>
+								</inbound>
+							</http>
+							<lastMileSecurity>false</lastMileSecurity>
+							<forwardSslSession>false</forwardSslSession>
+							<generateDefaultPublicUrl>false</generateDefaultPublicUrl>
+						</deploymentSettings>
+						<secureProperties>
+							<key>${key}</key>
 							<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
 							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
+						</secureProperties>
+						<properties>
+							<mule.env>${mule.env}</mule.env>
 						</properties>
 					</cloudhub2Deployment>
 					<classifier>mule-application</classifier>
